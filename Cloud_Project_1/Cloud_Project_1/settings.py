@@ -78,12 +78,8 @@ WSGI_APPLICATION = 'Cloud_Project_1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hitme_db',
-	    'USER': 'hitme_user',
-	    'PASSWORD': 'Mysql@123',
-	    'HOST': 'localhost',
-	    'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
