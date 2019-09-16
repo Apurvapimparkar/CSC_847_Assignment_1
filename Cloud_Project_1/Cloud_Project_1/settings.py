@@ -25,7 +25,7 @@ SECRET_KEY = 'n248v(3x=vyy+%69fw7(9_6sa%z647id*y9@iu2fg07rq(f(@#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ec2-13-57-255-6.us-west-1.compute.amazonaws.com', '172.31.4.105']
 
 
 # Application definition
@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'Cloud_Project_1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'hitme_db',
+	    'USER': 'hitme_user',
+	    'PASSWORD': 'Mysql@123',
+	    'HOST': 'localhost',
+	    'PORT': '',
     }
 }
 
