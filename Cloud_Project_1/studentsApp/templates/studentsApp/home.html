@@ -1,0 +1,16 @@
+{% extends "studentsApp/base.html" %}
+{% block content%}
+	{% for student in students %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="{% url 'student-detail' student.student_id %}">{{ student.first_name }}, {{ student.last_name}}</a>
+              <small class="text-muted">Student ID: {{ student.student_id }}</small>
+            </div>
+            <p class="article-content">Email: {{ student.email }}</p>
+            <p class="article-content">Address: {{ student.address }}</p>
+            <p class="article-content">GPA: {{ student.gpa }}</p>
+          </div>
+        </article>
+	{% endfor %}
+{% endblock content%}
