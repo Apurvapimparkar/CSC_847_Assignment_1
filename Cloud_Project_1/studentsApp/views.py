@@ -21,14 +21,14 @@ class StudentListView(ListView):
 class StudentSearchListView(ListView):
 	model = StudentsInfo
 	template_name = 'studentsApp/search.html'
-
+	context_object_name = 'students'
 	def get_queryset(self):
 		query = self.request.GET.get('q')
 		students_search = StudentsInfo.objects.all()
-		if query:
-			students_search = StudentsInfo.objects.filter(student_id__icontains='Apurva')
+		students_search = StudentsInfo.objects.filter(Q(student_id__icontains=query) | 
+								   Q(first_name__icontains=query) |
+								   Q(last_name__icontains=query))
 		return students_search
-
 
 class StudentDetailView(DetailView):
 	model = StudentsInfo
