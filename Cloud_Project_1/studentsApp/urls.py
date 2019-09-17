@@ -8,6 +8,6 @@ urlpatterns = [
     path('new/', StudentCreateView.as_view(), name='student-create'),
     path('student/<pk>/update/', StudentUpdateView.as_view(), name='student-update'),
     path('student/<pk>/delete/', StudentDeleteView.as_view(), name='student-delete'),
-    path('search', StudentSearchListView.as_view(),name='search'),
+    path('search/', StudentSearchListView.as_view(),name='search'),
     path('about/', views.about, name='studentsApp-about'),
 ]
